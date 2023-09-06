@@ -37,8 +37,8 @@ public class TestLoginPage extends BaseTest{
 		String actSearchBoxText = searchPage.getSearchPlaceholderText();
 		Assert.assertEquals(actSearchBoxText, expSearchText);
 
-		//Test comment
-		Assert.assertFalse(true);
+		//Test comment - again
+		//Assert.assertFalse(true);
 		
 		//Logout from Pluralsight Application
 		searchPage.logoutFromPluralsightApplication();

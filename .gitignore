@@ -9,6 +9,11 @@ build/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+Application logs
+Reports
+Screenshots
+Test Scripts Recording
+test-output
 *.iws
 *.iml
 *.ipr
