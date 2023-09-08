@@ -35,7 +35,7 @@ public class TestNGSuite {
 	public static void main(String[] args)  {
 
 		//Test driver excel sheet path
-		String  path = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata\\hybridFrameworkTestDriver.xlsx";
+		String  path = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata\\hybridFrameworkGradleProjectTestDriver.xlsx";
 		logger.info("Excel sheet Path : " +path);
 		try {
 			validateInputFile(path);
@@ -64,7 +64,7 @@ public class TestNGSuite {
 		//Setting XML suite parallel execution mode as classes/methods
 		//suiteName.setParallel(XmlSuite.ParallelMode.METHODS);
 
-		////Setting execution thread count for parallel execution
+		//Setting execution thread count for parallel execution
 		//suiteName.setThreadCount(2);
 		
 		//Setting name for XML tests
