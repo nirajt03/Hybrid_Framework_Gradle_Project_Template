@@ -1,32 +1,25 @@
 package commonUtility;
 
-import java.util.concurrent.TimeUnit;
-
+import excelUtilities.ExcelUtilities;
+import exceptions.FileDoesNotExistsException;
+import exceptions.InCorrectConfigConfigParameters;
+import helperTestUtility.BrowserFactory;
+import helperTestUtility.DriverFactory;
+import helperTestUtility.RetryListerner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Listeners;
-
-import excelUtilities.ExcelUtilities;
-import exceptions.FileDoesNotExistsException;
-import exceptions.InCorrectConfigConfigParameters;
-import reportUtilities.ReportingUtility;
-import helperTestUtility.BrowserFactory;
-import helperTestUtility.DriverFactory;
-import helperTestUtility.RetryListerner;
+import org.testng.annotations.*;
 import pageObjectModels.LoginPage;
+
+import reportUtilities.ReportingUtility;
 import runner.TestNGSuite;
 import screenRecorderUtilities.ScreenRecorderUtil;
-import screenRecorderUtilities.ScreenRecorderUtil.TypeOfScreen;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Base Test
@@ -41,14 +34,11 @@ public class BaseTest {
 
 	protected BrowserFactory bf = new BrowserFactory();
 	protected WebDriver driver;
-	ChromeOptions options;
-	
-	String path= System.getProperty("testScriptName");
+
 	public ArchUtilities archUtil= new ArchUtilities();
 	public ExcelUtilities excelUtil = new ExcelUtilities();
 
 	String testScriptName;
-	String className;
 	private int passedTests=0;
 	private int failedTests=0;
 	private int skipedTests=0;
@@ -72,7 +62,7 @@ public class BaseTest {
 		int thresholdDays = 10;
 		String testClassName = getClassName();
 		try {
-			ScreenRecorderUtil.startRecord(TypeOfScreen.RegularScreen,testClassName);
+			ScreenRecorderUtil.startRecord(ScreenRecorderUtil.TypeOfScreen.RegularScreen,testClassName);
 			ScreenRecorderUtil.deleteOlderFilesAndDirectories(thresholdDays, TimeUnit.DAYS,".avi");			
 			logger.info("Screen Recording Started ..!!");
 		} catch (Exception e) {
