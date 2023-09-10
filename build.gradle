@@ -12,7 +12,7 @@ repositories {
 dependencies {
 
     //Added my web automation utility
-    implementation files('libs/WebAutomationUtility-0.0.1-SNAPSHOT.jar')
+    implementation files('lib/WebAutomationUtility-0.0.1-SNAPSHOT.jar')
 
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.11.0'
