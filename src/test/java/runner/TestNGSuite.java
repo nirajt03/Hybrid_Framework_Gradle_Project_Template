@@ -248,5 +248,5 @@ public class TestNGSuite {
 			flag = false;
 		}
 		return flag;
-	}	
+	}
 }
