@@ -50,7 +50,7 @@ dependencies {
     implementation group: 'com.aventstack', name: 'extentreports', version: '5.1.0'
 
     // https://mvnrepository.com/artifact/commons-io/commons-io
-    implementation group: 'commons-io', name: 'commons-io', version: '2.13.0'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.17.0'
 
     // https://mvnrepository.com/artifact/com.github.stephenc.monte/monte-screen-recorder
     implementation group: 'com.github.stephenc.monte', name: 'monte-screen-recorder', version: '0.7.7.0'
